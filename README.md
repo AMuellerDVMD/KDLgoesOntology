@@ -1,2 +1,1 @@
-# KDLgoesOntology
-DVMD AG KDL Weiterentwicklung
+# KDL
