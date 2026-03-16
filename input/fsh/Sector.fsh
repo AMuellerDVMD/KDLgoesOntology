@@ -1,4 +1,4 @@
-//generated: 2026-03-15 12:20:04"
+//generated: 2026-03-16 08:59:03"
 
 CodeSystem: SectorCS
 Id: Sector
@@ -8,7 +8,7 @@ Description: "In welchem Sektor wird dieser Dokumenttyp eingesetzt"
 * insert Meta
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-03-15T12:00:00Z"
+* ^meta.lastUpdated = "2026-03-16T08:00:00Z"
 * ^url = "http://www.dvmd.de/kdlOntology/CodeSystem/Sector"
 * ^version = "0.1.0"
 * ^valueSet =  "http://www.dvmd.de/kdlOntology/ValueSet/Sector"
@@ -22,7 +22,7 @@ Description: "In welchem Sektor wird dieser Dokumenttyp eingesetzt"
 * #reha "Rehabilitation"
 
 
-//generated: 2026-03-15 12:20:04"
+//generated: 2026-03-16 08:59:03"
 
 ValueSet: SectorVS
 Id: Sector
@@ -31,7 +31,7 @@ Description: "In welchem Sektor wird dieser Dokumenttyp eingesetzt"
 
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-03-15T12:20:00Z"
+* ^meta.lastUpdated = "2026-03-16T08:59:00Z"
 
 * insert Meta
 

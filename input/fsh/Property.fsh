@@ -1,4 +1,4 @@
-//generated: 2026-03-15 12:20:04"
+//generated: 2026-03-16 08:59:04"
 
 CodeSystem: PropertyCS
 Id: Property
@@ -7,7 +7,7 @@ Description: "Properties für die KDL"
 * insert Meta
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-03-15T12:00:00Z"
+* ^meta.lastUpdated = "2026-03-16T08:00:00Z"
 * ^url = "http://www.dvmd.de/kdlOntology/CodeSystem/Property"
 * ^version = "2026"
 * ^valueSet =  "http://www.dvmd.de/kdlOntology/ValueSet/Property"
@@ -16,7 +16,10 @@ Description: "Properties für die KDL"
 * ^content = #complete
 * ^hierarchyMeaning = #is-a
 
-* #sector "Sektor"
+* #status "Status"
+* #abstract "ist der Dokumenttyp abstract, d.h. kann nicht gewählt selektiert werden"
+* #sectorQuelle "Sektor, aus dem das Dokument stammt"
+* #sectorZiel "Sektor, für den das Dokument bestimmt ist"
 * #kbv-relevant "KBV relevant"
 * #bg "BG"
 * #anwender "Anwender"
@@ -30,7 +33,7 @@ Description: "Properties für die KDL"
 
 
 
-//generated: 2026-03-15 12:20:04"
+//generated: 2026-03-16 08:59:04"
 
 ValueSet: PropertyVS
 Id: Property
@@ -38,7 +41,7 @@ Title: "KDL-Properties"
 Description: "Properties für die KDL"
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-03-15T12:20:00Z"
+* ^meta.lastUpdated = "2026-03-16T08:59:00Z"
 
 * insert Meta
 

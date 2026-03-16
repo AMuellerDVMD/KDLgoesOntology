@@ -1,4 +1,4 @@
-//generated: 2026-03-15 12:20:04"
+//generated: 2026-03-16 08:59:03"
 
 CodeSystem: KDLCS
 Id: KDL
@@ -8,9 +8,9 @@ Description: "Klinische Dokumentenklassen-Liste (KDL)"
 * insert Meta
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-03-15T12:00:00Z"
+* ^meta.lastUpdated = "2026-03-16T08:00:00Z"
 * ^url = "http://www.dvmd.de/kdlOntology/CodeSystem/KDL"
-* ^version = "2025"
+* ^version = "2026"
 * ^valueSet =  "http://www.dvmd.de/kdlOntology/ValueSet/KDL"
 * ^caseSensitive = false
 * ^versionNeeded = false
@@ -26,11 +26,25 @@ Description: "Klinische Dokumentenklassen-Liste (KDL)"
 * ^property[=].description = "abstract"
 * ^property[=].type = #boolean
 
-* ^property[+].code = #sector
+* ^property[+].code = #zweck
+* ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
+* ^property[=].extension[=].valueCanonical = "http://www.dvmd.de/kdl/ValueSet/Zweck"
+* ^property[=].uri = "http://www.dvmd.de/kdlOntology/CodeSystem/Property#zweck"
+* ^property[=].description = "Zweck des Dokuments"
+* ^property[=].type = #code
+
+* ^property[+].code = #sectorQuelle
 * ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
 * ^property[=].extension[=].valueCanonical = "http://www.dvmd.de/kdl/ValueSet/Sector"
-* ^property[=].uri = "http://www.dvmd.de/kdlOntology/CodeSystem/Property#sector"
-* ^property[=].description = "in welchem Sektor kommt diese Dokumentenklasse zur Anwendung"
+* ^property[=].uri = "http://www.dvmd.de/kdlOntology/CodeSystem/Property#sectorQuelle"
+* ^property[=].description = "aus welchem Sektor stammt die Dokumente in dieser Dokumentenklasse"
+* ^property[=].type = #code
+
+* ^property[+].code = #sectorZiel
+* ^property[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/codesystem-property-valueset"
+* ^property[=].extension[=].valueCanonical = "http://www.dvmd.de/kdl/ValueSet/Sector"
+* ^property[=].uri = "http://www.dvmd.de/kdlOntology/CodeSystem/Property#sectorZiel"
+* ^property[=].description = "für welchen Sektor sind die Dokumente dieser Dokumentenklasse bestimmt"
 * ^property[=].type = #code
 
 * ^property[+].code = #component
@@ -100,11 +114,13 @@ Description: "Klinische Dokumentenklassen-Liste (KDL)"
   * ^property[=].valueBoolean = true
   * #AU0101 "Aufnahmedokumente"
     * #AU010101 "Anamnesebogen" "Die Dokumentation beinhaltet medizinische, relevante Informationen zur Vorgeschichte. Inkl.: Krankengeschichte"
-      * ^property[+].code = #sector
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #daten
+      * ^property[+].code = #sectorZiel
       * ^property[=].valueCode = #ambulant
-      * ^property[+].code = #sector
+      * ^property[+].code = #sectorZiel
       * ^property[=].valueCode = #stationaer
-      * ^property[+].code = #sector
+      * ^property[+].code = #sectorZiel
       * ^property[=].valueCode = #reha
       * ^property[+].code = #kbv-relevant
       * ^property[=].valueBoolean = false
@@ -131,78 +147,154 @@ Description: "Klinische Dokumentenklassen-Liste (KDL)"
       * ^property[+].code = #dokart
       * ^property[=].valueString = "Patientenportal"
     * #AU010102 "Anmeldung Aufnahme" "Die Dokumentation beinhaltet persönliche und organisatorische Angaben zur Aufnahme. Inkl. KBV Muster PTV 12"
-      * ^property[+].code = #sector
+      * ^property[+].code = #sectorQuelle
+      * ^property[=].valueCode = #ambulant
+      * ^property[+].code = #sectorZiel
       * ^property[=].valueCode = #stationaer
       * ^property[+].code = #kbv-relevant
       * ^property[=].valueBoolean = true
     * #AU010103 "Aufnahmebogen" "Die Dokumentation beinhaltet den Befund des aktuellen Zustands bei Aufnahme und Informationen zur Vorgeschichte. Inkl.: Aufnahmebefund, Aufnahmeblatt, Krankenblatt, Apotheke Aufnahmebogen"
-      * ^property[+].code = #sector
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #daten
+      * ^property[+].code = #sectorZiel
       * ^property[=].valueCode = #stationaer
       * ^property[+].code = #component
       * ^property[=].valueCode = #admin
     * #AU010104 "Checkliste Aufnahme" "Die Dokumentation beinhaltet Angaben über erforderliche medizinische, organisatorische Maßnahmen zum Aufnahmezeitpunkt. Erfolgte Durchführungen werden gekennzeichnet."
-      * ^property[+].code = #sector
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #check
+      * ^property[+].code = #sectorQuelle
+      * ^property[=].valueCode = #stationaer
+      * ^property[+].code = #sectorZiel
       * ^property[=].valueCode = #stationaer
     * #AU010105 "Stammblatt" "Die Dokumentation beinhaltet zusammengefasst administrative und persönliche Daten im Überblick."
-      * ^property[+].code = #sector
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #daten
+      * ^property[+].code = #sectorQuelle
+      * ^property[=].valueCode = #stationaer
+      * ^property[+].code = #sectorZiel
       * ^property[=].valueCode = #stationaer
       * ^property[+].code = #component
       * ^property[=].valueCode = #admin
     * #AU010199 "Sonstige Aufnahmedokumentation" "Die Dokumentation beinhaltet Angaben, die nicht in einer spezifischeren KDL dieser Unterklasse abgebildet werden können. Inkl.: Aufnahmegespräch, Übersicht über bisherigen Behandlungsverlauf, Aufnahme/Mitaufnahme Begleitperson, Exkl.: Covid Fragebogen (Dokumentation COVID)"
       * ^property[+].code = #status
       * ^property[=].valueCode = #deprecated
-      * ^property[+].code = #sector
+      * ^property[+].code = #sectorQuelle
+      * ^property[=].valueCode = #stationaer
+      * ^property[+].code = #sectorZiel
       * ^property[=].valueCode = #stationaer
   * #AU1901 "Rettungsstelle"
     * #AU190101 "Einsatzprotokoll" "Die Dokumentation beinhaltet Angaben über den notarztspezifischen Einsatz. Inkl. Rettungsstellenprotokoll, Nothilfeprotokoll"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #daten
+      * ^property[+].code = #sectorQuelle
+      * ^property[=].valueCode = #ambulant
+      * ^property[+].code = #sectorZiel
+      * ^property[=].valueCode = #stationaer
     * #AU190102 "Notaufnahmebericht" "Die Dokumentation beinhaltet den ärztlichen Bericht über die Behandlung in der Notaufnahme."
-      * ^property[+].code = #sector
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
+      * ^property[+].code = #sectorQuelle
+      * ^property[=].valueCode = #stationaer
+      * ^property[+].code = #sectorZiel
       * ^property[=].valueCode = #stationaer
     * #AU190103 "Notaufnahmebogen" "Die Dokumentation beinhaltet den Befund des aktuellen Zustands in der Notaufnahme (inkl. Triage)."
-      * ^property[+].code = #sector
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #daten
+      * ^property[+].code = #sectorQuelle
+      * ^property[=].valueCode = #stationaer
+      * ^property[+].code = #sectorZiel
       * ^property[=].valueCode = #stationaer
     * #AU190105 "ISAR Screening" "Die Dokumentation beinhaltet Angaben für das Screening zur Ermittlung des geriatrischen Hilfebedarfs."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #daten
     * #AU190199 "Sonstige Dokumentation Rettungsstelle" "Die Dokumentation beinhaltet Angaben, die nicht in einer spezifischeren KDL dieser Unterklasse abgebildet werden kann. Inkl.: ZNA Notfallschein, Checkliste Notfallambulanz"
       * ^property[+].code = #status
       * ^property[=].valueCode = #deprecated
   * #AU0501 "Einweisungs-/Überweisungsdokumente"
     * #AU050101 "Verordnung von Krankenhausbehandlung" "Die Dokumentation beinhaltet Angaben zum Grund der stationären Aufnahme. Standardisiertes Einweisungsdokument gemäß Kassenärztliche Bundesvereinigung (KBV Muster 2)."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #anforderung
       * ^property[+].code = #kbv-relevant
       * ^property[=].valueBoolean = true
     * #AU050102 "Überweisungsschein" "Die Dokumentation beinhaltet Angaben zur geplanten Behandlungsart, Fachabteilung, Diagnosen, Behandlungsauftrag, Vertragsarzt. Inkl.: Standardisierter Überweisungsschein gem. Kassenärztliche Bundesvereinigung (KBV Muster 6 und 7), Überweisung D-Arzt. Exkl.: Abrechnungsschein, Notfall/Vertretungsschein"
+      * ^property[+].code = #sectorQuelle
+      * ^property[=].valueCode = #ambulant
+      * ^property[+].code = #sectorQuelle
+      * ^property[=].valueCode = #stationaer
+      * ^property[+].code = #sectorZiel
+      * ^property[=].valueCode = #ambulant
+      * ^property[+].code = #sectorZiel
+      * ^property[=].valueCode = #stationaer
       * ^property[+].code = #kbv-relevant
       * ^property[=].valueBoolean = true
     * #AU050104 "Verlegungsschein intern" "Die Dokumentation beinhaltet Angaben zur krankenhausinternen Verlegung auf eine andere Station oder einen Fachbereich. Exkl.: Verlegungsbericht (intern/extern), Ärztliche Stellungnahme"
       * ^property[+].code = #status
       * ^property[=].valueCode = #deprecated
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #daten
     * #AU050199 "Sonstiges Einweisungs-/Überweisungsdokument" "Die Dokumentation beinhaltet Angaben, die nicht in einer spezifischeren KDL dieser Unterklasse abgebildet werden können. Inkl.: Telefonische Überweisung, Patient Admission Form"
       * ^property[+].code = #status
       * ^property[=].valueCode = #deprecated
+      * ^property[+].code = #sectorQuelle
+      * ^property[=].valueCode = #ambulant
+      * ^property[+].code = #sectorZiel
+      * ^property[=].valueCode = #stationaer
 * #AD "Arztdokumentation"
   * ^property[+].code = #abstract
   * ^property[=].valueBoolean = true
   * #AD0101 "Arztberichte"
     * #AD010101 "Ärztliche Stellungnahme" "Die Dokumentation beinhaltet die ärztliche Einschätzung zum Gesundheitszustand für nachfolgende Zwecke. Inkl.: Gutachten, Unfallanzeige, KBV Muster 36, PTV5/8, Ärztliches Zeugnis, Dokumentation von Therapiezielen/Therapiezieländerungen Exkl.: MD-Gutachten"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
       * ^property[+].code = #kbv-relevant
       * ^property[=].valueBoolean = true
     * #AD010102 "Durchgangsarztbericht" "Die Dokumentation beinhaltet die ärztliche Beurteilung des Arbeits- bzw. Wegeunfalls auf standardisiertem Formular. Inkl.: Ergänzungsberichte D-Arzt (z. B. F1002, F1004, F1006, F1010, F1030, F1040, DUV F2222), Exkl.: Nachschaubericht"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #AD010103 "Entlassungsbericht intern" "Die Dokumentation beinhaltet die endgültige Zusammenfassung des stationären Aufenthaltes. Erstellt von der entlassenden Einrichtung. Exkl.: Verlegungsbericht intern; Hinw.: Diese KDL-Dokumentenklasse wird ab 1. Januar 2026 obsolet. Die Abbildung ist ab sofort mit der KDL AD010115 (Entlassungsbericht) möglich."
       * ^property[+].code = #status
       * ^property[=].valueCode = #deprecated
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #AD010104 "Entlassungsbericht extern" "Die Dokumentation beinhaltet die endgültige Zusammenfassung des stationären Aufenthaltes. Erstellt von einer vorbehandelnden Einrichtung. Exkl.: Verlegungsbericht extern; Hinw.: Diese KDL-Dokumentenklasse wird ab 1. Januar 2026 obsolet. Die Abbildung ist ab sofort mit der KDL AD010115 (Entlassungsbericht) möglich."
       * ^property[+].code = #status
       * ^property[=].valueCode = #deprecated
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #AD010105 "Reha-Bericht" "Die Dokumentation beinhaltet die Zusammenfassung des Aufenthaltes während der Rehabilitation."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #AD010106 "Verlegungsbericht intern" "Die Dokumentation beinhaltet die endgültige Zusammenfassung des stationären Aufenthaltes für die Verlegung auf eine andere Station, Fachbereich oder Einrichtung. Exkl.: Entlassungsbericht intern, Verlegungsschein intern; Hinw.: Diese KDL-Dokumentenklasse wird ab 1. Januar 2026 obsolet. Die Abbildung ist ab sofort mit der KDL AD010116 (Verlegungsbericht) möglich."
       * ^property[+].code = #status
       * ^property[=].valueCode = #deprecated
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
+      * ^property[+].code = #sectorQuelle
+      * ^property[=].valueCode = #stationaer
+      * ^property[+].code = #sectorZiel
+      * ^property[=].valueCode = #stationaer
     * #AD010107 "Verlegungsbericht extern" "Die Dokumentation beinhaltet die endgültige Zusammenfassung des stationären Aufenthaltes für die Verlegung von einer anderen Einrichtung. Erstellt von der vorbehandelnden Einrichtung. Exkl.: Entlassungsbericht extern;  Hinw.: Diese KDL-Dokumentenklasse wird ab 1. Januar 2026 obsolet. Die Abbildung ist ab sofort mit der KDL AD010116 (Verlegungsbericht) möglich."
       * ^property[+].code = #status
       * ^property[=].valueCode = #deprecated
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
+      * ^property[+].code = #sectorQuelle
+      * ^property[=].valueCode = #stationaer
+      * ^property[+].code = #sectorZiel
+      * ^property[=].valueCode = #stationaer
     * #AD010108 "Vorläufiger Arztbericht" "Die Dokumentation beinhaltet die vorläufige Fassung des Entlassungsberichtes."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #AD010109 "Ärztlicher Befundbericht" "Die Dokumentation beinhaltet die ausführliche ärztliche Zusammenfassung von Befunden. Exkl.: Befundbogen"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #AD010110 "Ärztlicher Verlaufsbericht" "Die Dokumentation beinhaltet Angaben zum chronologischen Verlauf der Erkrankung und zu durchgeführten Maßnahmen aus Sicht des Arztes. Inkl.: Standardisierte Formulare zur ärztlichen Verlaufsdokumentation Exkl.: Visitenprotokoll"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #AD010111 "Ambulanzbrief" "Die Dokumentation beinhaltet die Zusammenfassung einer ambulanten Behandlung in Briefform. Inkl.: Sprechstundenbrief"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
       * ^property[+].code = #component
       * ^property[=].valueCode = #anrede
       * ^property[+].code = #component
@@ -210,6 +302,8 @@ Description: "Klinische Dokumentenklassen-Liste (KDL)"
       * ^property[+].code = #component
       * ^property[=].valueCode = #gruss
     * #AD010112 "Kurzarztbrief" "Die Dokumentation beinhaltet die Zusammenfassung des stationären Aufenthaltes in Kurzform."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
       * ^property[+].code = #component
       * ^property[=].valueCode = #anrede
       * ^property[+].code = #component
@@ -217,8 +311,18 @@ Description: "Klinische Dokumentenklassen-Liste (KDL)"
       * ^property[+].code = #component
       * ^property[=].valueCode = #gruss
     * #AD010113 "Nachschaubericht" "Die Dokumentation beinhaltet Angaben zur Nachbehandlung eines Arbeits- bzw. Wegeunfalls durch den Durchgangsarzt auf standardisiertem Formular. Exkl.: Durchgangsarztbericht"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #AD010114 "Interventionsbericht" "Die Dokumentation beinhaltet diagnostische und therapeutische Interventionen/Eingriffe. Exkl.: Elektrokonvulsionstherapie, Herzkatheterprotokoll, Angiographiebefund, Punktionsprotokoll, OP Bericht, Endoskopiebefund"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #AD010115 "Entlassungsbericht" "Die Dokumentation beinhaltet die endgültige Zusammenfassung des stationären Aufenthaltes."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
+      * ^property[+].code = #sectorQuelle
+      * ^property[=].valueCode = #stationaer
+      * ^property[+].code = #sectorZiel
+      * ^property[=].valueCode = #ambulant
       * ^property[+].code = #component
       * ^property[=].valueCode = #anrede
       * ^property[+].code = #component
@@ -228,30 +332,50 @@ Description: "Klinische Dokumentenklassen-Liste (KDL)"
       * ^property[+].code = #dokzeit
       * ^property[=].valueString = "Entlassung"
     * #AD010116 "Verlegungsbericht" "Die Dokumentation beinhaltet die endgültige Zusammenfassung des stationären Aufenthaltes für die Verlegung auf eine andere Station, Fachbereich oder Einrichtung."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
+      * ^property[+].code = #sectorQuelle
+      * ^property[=].valueCode = #stationaer
+      * ^property[+].code = #sectorZiel
+      * ^property[=].valueCode = #stationaer
       * ^property[+].code = #dokzeit
       * ^property[=].valueString = "Verlegung"
     * #AD010199 "Sonstiger Arztbericht" "Die Dokumentation beinhaltet Angaben, die nicht in einer spezifischeren KDL dieser Unterklasse abgebildet werden kann. Inkl.: Autopsiebericht, Obduktionsbericht, Ärztliche Information (Briefform) des einweisenden bzw. überweisenden Arztes, Psychologischer Fachbericht"
       * ^property[+].code = #status
       * ^property[=].valueCode = #deprecated
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #AD020101 "Arbeitsunfähigkeitsbescheinigung" "Die Dokumentation beinhaltet Angaben über die Arbeitsunfähigkeit. Inkl.: KBV Muster 1, AU KV 52"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
       * ^property[+].code = #kbv-relevant
       * ^property[=].valueBoolean = true
   * #AD0201 "Bescheinigungen"
     * #AD020102 "Beurlaubung" "Die Dokumentation beinhaltet die Erklärung über die Unterbrechung des stationären Aufenthaltes über einen festgelegten Zeitraum."
     * #AD020103 "Todesbescheinigung" "Die Dokumentation beinhaltet Angaben zum Verstorbenen, zur Feststellung des Todes, zur Todesart sowie weiteren Zusatzangaben. Inkl.: Leichenbegleitschein, Sterbefallanzeige"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #daten
       * ^property[+].code = #dokzeit
       * ^property[=].valueString = "nach Tod des Patienten"
     * #AD020104 "Ärztliche Bescheinigung" "Die Dokumentation beinhaltet Bescheinigungen vom Arzt über z. B. die stationäre Behandlung, Atteste, Krankheitszustand. Exkl.: Arbeitsunfähigkeitsbescheinigung, Aufenthaltsbescheinigung Inkl.: KBV Muster 3 (Zeugnis über den mutmaßlichen Tag der Entbindung), 9 (Bescheinigung einer Frühgeburt oder einer Behinderung des Kindes), 21 (Ärztliche Bescheinigung für den Bezug von Krankengeld bei Erkrankung eines Kindes), 55 (Bescheinigung einer schwerwiegenden chronischen Erkrankung)"
       * ^property[+].code = #kbv-relevant
       * ^property[=].valueBoolean = true
     * #AD020105 "Notfall-/Vertretungsschein" "Die Dokumentation beinhaltet Diagnosen, Befunde, Therapien im Rahmen einer ambulanten Notfall- / Vertretungsbehandlung (KBV Muster 19). Exkl.: Abrechnungsschein, Überweisungsschein"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
       * ^property[+].code = #kbv-relevant
       * ^property[=].valueBoolean = true
     * #AD020106 "Wiedereingliederungsplan" "Die Dokumentation beinhaltet Maßnahmen zur Wiedereingliederung in das Erwerbsleben (KBV Muster 20)."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
       * ^property[+].code = #kbv-relevant
       * ^property[=].valueBoolean = true
     * #AD020107 "Aufenthaltsbescheinigung" "Die Dokumentation beinhaltet den Nachweis, in welchem Zeitraum der stationäre Aufenthalt stattgefunden hat."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #daten
     * #AD020108 "Geburtsanzeige" "Die Dokumentation beinhaltet administrative Angaben über die Eltern sowie das neugeborenen Kind, welche an das Standesamt übermittelt werden."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #daten
       * ^property[+].code = #dokzeit
       * ^property[=].valueString = "nach Geburt"
     * #AD020199 "Sonstige Bescheinigung" "Die Dokumentation beinhaltet Angaben, die nicht in einer spezifischeren KDL dieser Unterklasse abgebildet werden kann. z.B. Bescheinigungen, die auch von nicht-ärztlichen Berufsgruppen ausgestellt werden. Beratungsbescheinigung, administrative Bescheinigung über den Krankenhausaufenthalt, Schulbescheinigung Inkl.: KBV Muster 85 (Nachweis der Anspruchsberechtigung), Bescheinigung Covid Test/Impfung"
@@ -261,6 +385,8 @@ Description: "Klinische Dokumentenklassen-Liste (KDL)"
       * ^property[=].valueBoolean = true
   * #AD0202 "Befunderhebungen"
     * #AD020201 "Anatomische Skizze" "Die Dokumentation beinhaltet anatomische Abbildungen, die zur Befunderhebung dienen."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #bild
       * ^property[+].code = #component
       * ^property[=].valueCode = #bild
     * #AD020202 "Befundbogen" "Die Dokumentation beinhaltet Ergebnisse der ärztlichen Untersuchung. Exkl.: Funktionsdiagnostik, bildgebende Diagnostik, Funktionstest, Ärztlicher Befundbericht"
@@ -269,18 +395,26 @@ Description: "Klinische Dokumentenklassen-Liste (KDL)"
       * ^property[+].code = #kbv-relevant
       * ^property[=].valueBoolean = true
     * #AD020205 "Messblatt" "Die Dokumentation beinhaltet Messungen von Teilen des Körpers, Gewicht und Körpergröße. Exkl.: Perzentilkurve"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #AD020206 "Belastungserprobung" "Die Dokumentation beinhaltet die Regelung zur Art und Dauer der Rückkehr in das Berufsleben. Inkl.: KBV-Formular F3110 und F3112"
       * ^property[+].code = #kbv-relevant
       * ^property[=].valueBoolean = true
     * #AD020207 "Ärztlicher Fragebogen" "Die Dokumentation beinhaltet Angaben zu gezielten Fragen, die ausschließlich durch einen Arzt beantwortet werden. z.B. Ärztlicher Fragebogen zur Aufnahme in die vollstationäre Pflege, Kurzzeitpflege oder Tagespflege."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #AD020208 "Befund extern" "Die Dokumentation beinhaltet Ergebnisse von verschiedenen ärztlichen/therapeutischen Untersuchungen und Befunderhebungen, welche in vorbehandelnden Einrichtungen/Praxen entstanden sind, aber nicht durch eine spezifischere KDL abgebildet werden kann. Exkl. Laborbefund extern;  Hinw.: Diese KDL-Dokumentenklasse wird ab 1. Januar 2026 obsolet."
       * ^property[+].code = #status
       * ^property[=].valueCode = #deprecated
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #AD020299 "Sonstige ärztliche Befunderhebung" "Die Dokumentation beinhaltet Angaben, die nicht in einer spezifischeren KDL dieser Unterklasse abgebildet werden kann."
       * ^property[+].code = #status
       * ^property[=].valueCode = #deprecated
   * #AD0601 "Fallbesprechungen"
     * #AD060101 "Konsilanforderung" "Die Dokumentation beinhaltet die Anforderung/Anmeldung einer Befundung durch einen Facharzt aus einem weiteren Leistungsbereich."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #anforderung
     * #AD060103 "Konsilbericht intern" "Die Dokumentation beinhaltet die Befundung und Empfehlung eines konsiliarischen Facharztes für den weiteren Behandlungsverlauf. Erstellt von der entlassenden Einrichtung.; Hinw.: Diese KDL-Dokumentenklasse wird ab 1. Januar 2026 obsolet. Die Abbildung ist ab sofort mit der KDL AD060110 (Konsilbericht) möglich."
       * ^property[+].code = #status
       * ^property[=].valueCode = #deprecated
@@ -290,11 +424,19 @@ Description: "Klinische Dokumentenklassen-Liste (KDL)"
       * ^property[+].code = #kbv-relevant
       * ^property[=].valueBoolean = true
     * #AD060105 "Visitenprotokoll" "Die Dokumentation beinhaltet Angaben zu einer ärztlichen, therapeutischen und pflegerischen Besprechung zum aktuellen Zustand sowie weitere Maßnahmen. Visiten erfolgen in der Regel direkt im Beisein des zu Behandelnden. Exkl.: Ärztlicher Verlaufsbericht, Pflegevisite, Apotheke Visitenprotokoll"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #AD060107 "Teambesprechungsprotokoll" "Die Dokumentation beinhaltet Angaben zu einer interdisziplinären Beratung über den aktuellen Gesundheitszustand mit Risikoeinschätzung, Indikationsstellung und der Planung des weiteren Verlaufes/Vorgehens inkl. beteiligte Berufsgruppen/Facharztgruppen (z. B. Herzteam-Protokoll). Exkl.: Tumorkonferenzprotokoll"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #AD060108 "Anordnung/Verordnung" "Die Dokumentation beinhaltet die Festlegung therapeutischer Maßnahmen. Inkl.: KBV Muster 63/64/65 Exkl.: Heil-/ Hilfsmittelverordnung, Rezept, Psychologische Therapieanordnung, Verordnung von Krankenhausbehandlung, Postoperative Verordnung, Bestrahlungsverordnung"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #anforderung
       * ^property[+].code = #kbv-relevant
       * ^property[=].valueBoolean = true
     * #AD060110 "Konsilbericht" "Die Dokumentation beinhaltet die Zusammenfassung der Befundung, die Einschätzung und Empfehlung eines Facharztes oder Apothekers/Apothekerin für den weiteren Behandlungsverlauf. Inkl.: KBV Muster 22 (Konsiliarbericht vor Aufnahme einer Psychotherapie), Exkl. AMTS-Prüfbericht"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
       * ^property[+].code = #kbv-relevant
       * ^property[=].valueBoolean = true
     * #AD060199 "Sonstige Fallbesprechung" "Die Dokumentation beinhaltet Angaben, die nicht in einer spezifischeren KDL dieser Unterklasse abgebildet werden kann. Inkl.: Angehörigengespräch/Patientengespräch/Entlassungsgespräch, Gesprächsnotiz, Sprechstundenprotokoll"
@@ -305,28 +447,64 @@ Description: "Klinische Dokumentenklassen-Liste (KDL)"
   * ^property[=].valueBoolean = true
   * #DG0201 "Bildgebende Diagnostiken"
     * #DG020101 "Anforderung bildgebende Diagnostik" "Die Dokumentation beinhaltet die Anforderung oder Anmeldung einer Diagnostik durch ärztliches Personal, bei der die Untersuchungsergebnisse bildlich dargestellt werden."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #anforderung
     * #DG020102 "Angiographiebefund" "Die Dokumentation beinhaltet Ergebnisse einer speziellen radiologischen Untersuchung, bei der Arterien, Venen oder Lymphbahnen bildlich dargestellt und ausgewertet werden. Inkl.: Phlebographiebefund Exkl.: Herzkatheterprotokoll"
     * #DG020103 "CT-Befund" "Die Dokumentation beinhaltet Ergebnisse einer speziellen radiologischen Untersuchung. Es entsteht ein mehrdimensionaler Querschnitt von Knochen und Weichteilen, welcher bildlich dargestellt und ausgewertet wird. Exkl.: PET-Befund"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG020104 "Echokardiographiebefund" "Die Dokumentation beinhaltet Ergebnisse einer ultraschallgestützten Untersuchung der Struktur und Funktion des Herzens, welche bildlich dargestellt und ausgewertet werden."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG020105 "Endoskopiebefund" "Die Dokumentation beinhaltet Ergebnisse einer Untersuchung bei der Körperhöhlen und Hohlorgane von innen bildlich dargestellt und ausgewertet werden."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG020106 "Herzkatheterprotokoll" "Die Dokumentation beinhaltet Ergebnisse einer minimalinvasiven Untersuchung des Herzens, unter radiologischer Kontrolle, über einen speziellen Katheter. Exkl.: Angiographieprotokoll"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG020107 "MRT-Befund" "Die Dokumentation beinhaltet Ergebnisse einer speziellen radiologischen Untersuchung, bei der Schnittbilder von Knochen und Weichteilen im menschlichen Körper, mit Hilfe von Magnetfeldern, bildlich dargestellt und ausgewertet werden."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG020108 "OCT-Befund" "Die Dokumentation beinhaltet Ergebnisse einer tomographischen Untersuchung, bei der mehrdimensionale Aufnahmen des Auges bildlich dargestellt und ausgewertet werden. Exkl.: Augenuntersuchung"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG020109 "PET-Befund" "Die Dokumentation der Positronen-Emissions-Tomographie beinhaltet Ergebnisse einer nuklearmedizinischen Untersuchung, welche zum größten Teil im Rahmen der Tumordiagnostik eingesetzt wird. Die Stoffwechselvorgänge im Gewebe werden bildlich dargestellt und ausgewertet. Exkl.: CT-Befund, SPECT-Befund, Szintigraphie"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG020110 "Röntgenbefund" "Die Dokumentation beinhaltet Ergebnisse einer radiologischen Untersuchung bei der Körperstrukturen wie Knochen, Gefäße und innere Organe mit Hilfe eines Röntgen-Gerätes durchleuchtet, bildlich dargestellt und ausgewertet werden. Exkl.: Mammographie, Angiographiebefund"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG020111 "Sonographiebefund" "Die Dokumentation beinhaltet Ergebnisse einer Untersuchung mittels Ultraschall, bei der organisches Gewebe bildlich dargestellt und ausgewertet werden. Exkl.: Echokardiographie, Inkl.: Doppler-, Duplexsonographie, Endosonographie"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG020112 "SPECT-Befund" "Die Dokumentation der Einzelphotonen-Emissionscomputertomographie beinhaltet Ergebnisse einer nuklearmedizinischen Untersuchung, welche zum größten Teil im Rahmen der Tumordiagnostik eingesetzt wird. Die Stoffwechselvorgänge im Gewebe werden grafisch dargestellt und ausgewertet. Exkl.: CT-Befund, PET-Befund, Szintigraphie"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG020113 "Szintigraphiebefund" "Die Dokumentation beinhaltet Ergebnisse einer nuklearmedizinischen Untersuchung, mittels Gabe einer radioaktiven Substanz, bei welcher Entzündungen oder Tumore in Organen und Knochen bildlich dargestellt und ausgewertet werden. Exkl.: PET-Befund, SPECT-Befund"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG020114 "Mammographiebefund" "Die Dokumentation beinhaltet Ergebnisse einer radiologischen Untersuchung, bei der mittels Röntgenstrahlen das Brustgewebe durchleuchtet, bildlich dargestellt und ausgewertet wird. Exkl.: Röntgenbefund"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG020115 "Checkliste bildgebende Diagnostik" "Die Dokumentation beinhaltet Angaben über Voraussetzungen, den Ablauf oder erforderliche bildgebende Diagnostiken. Erfolgte Durchführungen werden gekennzeichnet."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #check
     * #DG020199 "Sonstige Dokumentation bildgebende Diagnostik" "Die Dokumentation beinhaltet Angaben, die nicht in einer spezifischeren KDL dieser Unterklasse abgebildet werden kann. Inkl.: Kapillarmikroskopie"
       * ^property[+].code = #status
       * ^property[=].valueCode = #deprecated
   * #DG0601 "Funktionsdiagnostiken"
     * #DG060101 "Anforderung Funktionsdiagnostik" "Die Dokumentation beinhaltet die Anforderung oder Anmeldung von Diagnostiken ohne bildgebende Darstellung."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #anforderung
     * #DG060102 "Audiometriebefund" "Die Dokumentation beinhaltet Ergebnisse über die Messung der Funktionalität des Gehörs."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG060103 "Befund evozierter Potentiale" "Die Dokumentation beinhaltet Ergebnisse von neurophysiologischen Untersuchungen, bei der Veränderungen der elektrischen Aktivität von Nerven, Rückenmark oder Gehirn dargestellt und ausgewertet werden. z.B.: VEP, AEP, SEP"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG060104 "Blutdruckprotokoll" "Die Dokumentation beinhaltet Ergebnisse von Messungen des arteriellen und venösen Drucks in den Blutgefäßen."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG060105 "CTG-Ausdruck" "Die Dokumentation beinhaltet Ergebnisse von Messungen der Herztöne des ungeborenen Kindes sowie die Wehentätigkeit der Mutter."
     * #DG060106 "Dokumentationsbogen Feststellung Hirntod" "Die Dokumentation beinhaltet Angaben zu den Voraussetzungen, den klinischen Symptomen und dem Irreversibilitätsnachweis zur Feststellung des Hirnfunktionsausfalls."
     * #DG060107 "Dokumentationsbogen Herzschrittmacherkontrolle" "Die Dokumentation beinhaltet Ergebnisse einer Nachsorgeuntersuchung nach dem Einsetzen eines Herzschrittmacherimplantats."
@@ -335,15 +513,35 @@ Description: "Klinische Dokumentenklassen-Liste (KDL)"
     * #DG060110 "EMG-Befund" "Die Dokumentation beinhaltet die Ergebnisse sowie die visuelle Darstellung der Aufzeichnung und Messung der elektrischen Muskelaktivität."
     * #DG060111 "EKG-Auswertung" "Die Dokumentation beinhaltet die Ergebnisse sowie die visuelle Darstellung der Aufzeichnung und Messung der elektrischen Aktivität des Herzens. Exkl.: Ergometriebefund, Belastungs-EKG"
     * #DG060112 "Manometriebefund" "Die Dokumentation beinhaltet die Ergebnisse und die visuelle Darstellung einer physikalischen Druckmessung von Hohlorganen. Exkl.: Zystometrie, Rhinomanometrie"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG060113 "Messungsprotokoll Augeninnendruck" "Die Dokumentation beinhaltet die Ergebnisse der Messung des Augeninnendrucks (Tonometrie) mittels Applationstonometer."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG060114 "Neurographiebefund" "Die Dokumentation beinhaltet die Ergebnisse der Messung der Nervenleitgeschwindigkeit peripherer Nerven. Dazu zählen Nerven, die Muskeln versorgen sowie Nerven für Sinnesempfindungen."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG060115 "Rhinometriebefund" "Die Dokumentation beinhaltet die Ergebnisse der Darstellung des Nasenquerschnittes um Engstellen zu lokalisieren und zu messen."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG060116 "Schlaflabordokumentationsbogen" "Die Dokumentation beinhaltet die Ergebnisse und Auswertung des Schlafverhaltens."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG060117 "Schluckuntersuchung" "Die Dokumentation beinhaltet die Ergebnisse einer Prüfung des Schluckverhaltens."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG060118 "Checkliste Funktionsdiagnostik" "Die Dokumentation beinhaltet Angaben über Voraussetzungen, den Ablauf oder erforderliche funktionelle Diagnostiken. Erfolgte Durchführungen werden gekennzeichnet."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #check
     * #DG060119 "Ergometriebefund" "Die Dokumentation beinhaltet die Messergebnisse mittels EKG, bei der unter körperlicher Belastung die Leistungsfähigkeit des Herz - Kreislaufsystem getestet wird. Inkl.: Spiroergometrie, Belastungs-EKG Exkl.: EKG-Auswertung"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG060120 "Kipptischuntersuchung" "Die Dokumentation beinhaltet die Ergebnisse eines medizinischen Verfahrens, das zur Klärung von Synkopen dient, um die Veränderung von Blutdruck und Puls zu testen."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG060121 "Augenuntersuchung" "Die Dokumentation beinhaltet die Ergebnisse von diversen Untersuchungen des Auges. Exkl.: OCT-Befund, Messungsprotokoll Augeninnendruck"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #ergebnis
     * #DG060122 "Dokumentationsbogen ICD Kontrolle" "Die Dokumentation beinhaltet Ergebnisse einer Nachsorgeuntersuchung nach dem Einsetzen eines Defibrillators auf seine Funktion."
     * #DG060123 "Zystometrie" "Die Dokumentation beinhaltet Ergebnisse einer Untersuchung, bei der Druck und Volumen der Harnblase gemessen wird."
     * #DG060124 "Uroflowmetrie" "Die Dokumentation beinhaltet Ergebnisse einer urologischen Untersuchungsmethode, bei der eine Messung der Menge und Dauer des Harnflusses vorgenommen wird. Inkl.: Urodynamische Untersuchung"
@@ -810,9 +1008,13 @@ Inkl.: Palliativmedizinisches Basisassessment Exkl.: Teambesprechungsprotokoll"
     * #AM190107 "Empfangsbestätigung" "Die Dokumentation beinhaltet einen Nachweis für den Empfang sowie über die Ausgabe von Dokumenten, Medikamenten, Hilfsmittel usw."
     * #AM190108 "Handschriftliche Notiz" "Die Dokumentation beinhaltet ausschließlich handschriftliche Informationen auf einem formlosen Bogen."
     * #AM190109 "Lieferschein" "Die Dokumentation beinhaltet Angaben über eine Lieferung."
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #daten
     * #AM190110 "Schriftverkehr Amt/Gericht/Anwalt" "Die Dokumentation beinhaltet sämtliche Korrespondenzen von Ämtern, Behörden oder Anwälten. Exkl.: Schriftverkehr Amtsgericht, Schriftverkehr Strafverfolgung und Schadensersatz"
     * #AM190111 "Schriftverkehr Strafverfolgung und Schadensersatz" "Die Dokumentation beinhaltet sämtliche Korrespondenzen mit Ämtern und Behörden, die im Rahmen der Strafverfolgung, Fahndung oder Schadensersatz entsteht. Exkl.: Schriftverkehr Amt/Behörde/Anwalt allgemein, Schriftverkehr Amtsgericht allgemein"
     * #AM190112 "Anforderung Unterlagen MD" "Die Dokumentation beinhaltet eine Liste mit den zur Prüfung der Abrechnung notwendigen Unterlagen in der Klassifikation nach IHE/KDL (gem. Abschnitt 6.2, Anlage 1,eVV) oder zur Leistungsgruppen/StrOPS-Prüfung durch den Medizinischen Dienst. Exkl.: Anforderung Unterlagen"
+      * ^property[+].code = #zweck
+      * ^property[=].valueCode = #anforderung
     * #AM190113 "Widerspruchsbegründung" "Die Dokumentation beinhaltet den (medizinischen) Widerspruch gegen einen Leistungsentscheid. Exkl.: Ärztlicher Widerspruch im laufenden MD-Verfahren (Schriftkehr MD Arzt)"
     * #AM190114 "Schriftverkehr Unfallversicherungsträger und Leistungserbringer" "Die Dokumentation beinhaltet sämtliche Korrespondenz zwischen medizinischer Einrichtung und dem Unfallversicherungsträger."
     * #AM190199 "Sonstiger Schriftverkehr" "Die Dokumentation beinhaltet Angaben, die nicht in einer spezifischeren KDL dieser Unterklasse abgebildet werden kann. Inkl.: KBV Muster 53 (Anfrage zum Zusammenhang von Arbeitsunfähigkeitszeiten), Mitteilung Termin, Übersendung Unterlagen, Mitteilung Termin stationäre Aufnahme"
@@ -980,7 +1182,7 @@ Detailinformationen: KBV (2022): https://mio.kbv.de/display/ULB. Zugegriffen: 18
     * #UB999996 "Nachweise (Zusatz-) Entgelte" "Die Dokumentation beinhaltet die Nachweise (inkl. Dosis, Mengenangaben, Indikationsstellung) der durchgeführten diagnostischen, therapeutischen und/oder pflegerischen Maßnahmen von Entgelten, ergänzenden Tagesentgelten (ET), ZE oder ZP. Dieser KDL-Kode ist ausschließlich für die Anforderung von Unterlagen durch den MD zu verwenden."
 
 
-//generated: 2026-03-15 12:20:04"
+//generated: 2026-03-16 08:59:04"
 
 ValueSet: KDLVS
 Id: KDL
@@ -988,12 +1190,12 @@ Title: "KDL"
 Description: "Klinische Dokumentenklassen-Liste (KDL)"
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-03-15T12:20:00Z"
+* ^meta.lastUpdated = "2026-03-16T08:59:00Z"
 
 * insert Meta
 
 * ^url = "http://www.dvmd.de/kdlOntology/ValueSet/KDL"
-* ^version = "2025"
+* ^version = "2026"
 * ^status = #draft
 * ^experimental = false
 
