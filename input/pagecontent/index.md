@@ -26,6 +26,10 @@ Dieser Leitfaden befolgt mehrere Ziele:
   * bessere Beschreibung der Codes
   * Umbau in eine Ontologie
 
+## Mappings
+
+Mappings zu oder von KDL sind in einem separaten Projekt enthalten.
+
 ## Offene Punkte
 
 * Properties angeben
