@@ -1,4 +1,4 @@
-//generated: 2026-03-16 08:59:03"
+//generated: 2026-04-12 22:23:26"
 
 CodeSystem: SectorCS
 Id: Sector
@@ -8,7 +8,7 @@ Description: "In welchem Sektor wird dieser Dokumenttyp eingesetzt"
 * insert Meta
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-03-16T08:00:00Z"
+* ^meta.lastUpdated = "2026-04-12T22:00:00Z"
 * ^url = "http://www.dvmd.de/kdlOntology/CodeSystem/Sector"
 * ^version = "0.1.0"
 * ^valueSet =  "http://www.dvmd.de/kdlOntology/ValueSet/Sector"
@@ -20,9 +20,11 @@ Description: "In welchem Sektor wird dieser Dokumenttyp eingesetzt"
 * #ambulant "ambulant"
 * #stationaer "stationär"
 * #reha "Rehabilitation"
+* #Nicht-Med "nicht-medizinisch"
+* #forschung "Forschung"
 
 
-//generated: 2026-03-16 08:59:03"
+//generated: 2026-04-12 22:23:26"
 
 ValueSet: SectorVS
 Id: Sector
@@ -31,7 +33,7 @@ Description: "In welchem Sektor wird dieser Dokumenttyp eingesetzt"
 
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-03-16T08:59:00Z"
+* ^meta.lastUpdated = "2026-04-12T22:23:00Z"
 
 * insert Meta
 

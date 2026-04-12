@@ -1,4 +1,4 @@
-//generated: 2026-03-16 08:59:03"
+//generated: 2026-04-12 22:23:26"
 
 CodeSystem: ZweckCS
 Id: Zweck
@@ -8,7 +8,7 @@ Description: "welcher Zweck wird mit dem Dokument verfolgt"
 * insert Meta
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-03-16T08:00:00Z"
+* ^meta.lastUpdated = "2026-04-12T22:00:00Z"
 * ^url = "http://www.dvmd.de/kdlOntology/CodeSystem/Zweck"
 * ^version = "0.1.0"
 * ^valueSet =  "http://www.dvmd.de/kdlOntology/ValueSet/Zweck"
@@ -27,7 +27,7 @@ Description: "welcher Zweck wird mit dem Dokument verfolgt"
   * #info "Informationen (für den Patienten)"
 
 
-//generated: 2026-03-16 08:59:03"
+//generated: 2026-04-12 22:23:26"
 
 ValueSet: ZweckVS
 Id: Zweck
@@ -36,7 +36,7 @@ Description: "welcher Zweck wird mit dem Dokument verfolgt"
 
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-03-16T08:59:00Z"
+* ^meta.lastUpdated = "2026-04-12T22:23:00Z"
 
 * insert Meta
 

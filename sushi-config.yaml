@@ -9,8 +9,8 @@ name: KDLontology
 title: KDL Ontology - Klinische Dokumentenklassen-Liste
 description: Implementation Guide für KDL as an Ontology
 status: draft # draft | active | retired | unknown
-version: 0.1.1
-date: 2026-03-16
+version: 0.1.2
+date: 2026-04-12
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2026+
 releaseLabel: ci-build

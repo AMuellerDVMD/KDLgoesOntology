@@ -1,5 +1,5 @@
 //Metadata
-//generated: 2026-03-16 08:59:03"
+//generated: 2026-04-12 22:23:26"
 
 Alias: $BaseUrl = http://www.dvmd.de/kdlOntology
 
@@ -11,11 +11,11 @@ RuleSet: Meta
 * ^copyright = "DVMD e.V."
 * ^contact.telecom.system = #url
 * ^contact.telecom.value = "http://oracle.com/health"
-* ^date = "2026-03-16"
+* ^date = "2026-04-12"
 
 RuleSet: MetaInstance
 * publisher = "Oracle"
-* date = 2026-03-16
+* date = 2026-04-12
 
 
 RuleSet: Line-Simple(code, descr)

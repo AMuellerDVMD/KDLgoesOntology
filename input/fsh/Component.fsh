@@ -1,4 +1,4 @@
-//generated: 2026-03-16 08:59:03"
+//generated: 2026-04-12 22:23:26"
 
 CodeSystem: ComponentCS
 Id: Component
@@ -8,7 +8,7 @@ Description: "Welche Komponenten enthält ein bestimmter Dokumenttyp"
 * insert Meta
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-03-16T08:00:00Z"
+* ^meta.lastUpdated = "2026-04-12T22:00:00Z"
 * ^url = "http://www.dvmd.de/kdlOntology/CodeSystem/Component"
 * ^version = "0.1.0"
 * ^valueSet =  "http://www.dvmd.de/kdlOntology/ValueSet/Component"
@@ -36,7 +36,7 @@ Description: "Welche Komponenten enthält ein bestimmter Dokumenttyp"
 * #admin "administrative Daten"
 
 
-//generated: 2026-03-16 08:59:03"
+//generated: 2026-04-12 22:23:26"
 
 ValueSet: ComponentVS
 Id: Component
@@ -45,7 +45,7 @@ Description: "Welche Komponenten enthält ein bestimmter Dokumenttyp"
 
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-03-16T08:59:00Z"
+* ^meta.lastUpdated = "2026-04-12T22:23:00Z"
 
 * insert Meta
 
