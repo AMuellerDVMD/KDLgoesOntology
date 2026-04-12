@@ -1,4 +1,4 @@
-//generated: 2026-04-12 22:23:26"
+//generated: 2026-04-12 22:51:41"
 
 CodeSystem: ZweckCS
 Id: Zweck
@@ -27,7 +27,7 @@ Description: "welcher Zweck wird mit dem Dokument verfolgt"
   * #info "Informationen (für den Patienten)"
 
 
-//generated: 2026-04-12 22:23:26"
+//generated: 2026-04-12 22:51:41"
 
 ValueSet: ZweckVS
 Id: Zweck
@@ -36,7 +36,7 @@ Description: "welcher Zweck wird mit dem Dokument verfolgt"
 
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-04-12T22:23:00Z"
+* ^meta.lastUpdated = "2026-04-12T22:51:00Z"
 
 * insert Meta
 

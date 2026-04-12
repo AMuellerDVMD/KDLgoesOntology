@@ -1,4 +1,4 @@
-//generated: 2026-04-12 22:23:26"
+//generated: 2026-04-12 22:51:41"
 
 CodeSystem: KDLCS
 Id: KDL
@@ -1894,7 +1894,7 @@ Detailinformationen: KBV (2022): https://mio.kbv.de/display/ULB. Zugegriffen: 18
       * ^property[=].valueCode = #Nicht-Med
 
 
-//generated: 2026-04-12 22:23:27"
+//generated: 2026-04-12 22:51:41"
 
 ValueSet: KDLVS
 Id: KDL
@@ -1902,7 +1902,7 @@ Title: "KDL"
 Description: "Klinische Dokumentenklassen-Liste (KDL)"
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-04-12T22:23:00Z"
+* ^meta.lastUpdated = "2026-04-12T22:51:00Z"
 
 * insert Meta
 

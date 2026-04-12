@@ -1,5 +1,5 @@
 //Metadata
-//generated: 2026-04-12 22:23:26"
+//generated: 2026-04-12 22:51:41"
 
 Alias: $BaseUrl = http://www.dvmd.de/kdlOntology
 

@@ -1,4 +1,4 @@
-//generated: 2026-04-12 22:23:26"
+//generated: 2026-04-12 22:51:41"
 
 CodeSystem: SectorCS
 Id: Sector
@@ -24,7 +24,7 @@ Description: "In welchem Sektor wird dieser Dokumenttyp eingesetzt"
 * #forschung "Forschung"
 
 
-//generated: 2026-04-12 22:23:26"
+//generated: 2026-04-12 22:51:41"
 
 ValueSet: SectorVS
 Id: Sector
@@ -33,7 +33,7 @@ Description: "In welchem Sektor wird dieser Dokumenttyp eingesetzt"
 
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-04-12T22:23:00Z"
+* ^meta.lastUpdated = "2026-04-12T22:51:00Z"
 
 * insert Meta
 

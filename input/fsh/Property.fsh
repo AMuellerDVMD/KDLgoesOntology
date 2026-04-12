@@ -1,4 +1,4 @@
-//generated: 2026-04-12 22:23:27"
+//generated: 2026-04-12 22:51:41"
 
 CodeSystem: PropertyCS
 Id: Property
@@ -33,7 +33,7 @@ Description: "Properties für die KDL"
 
 
 
-//generated: 2026-04-12 22:23:27"
+//generated: 2026-04-12 22:51:41"
 
 ValueSet: PropertyVS
 Id: Property
@@ -41,7 +41,7 @@ Title: "KDL-Properties"
 Description: "Properties für die KDL"
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-04-12T22:23:00Z"
+* ^meta.lastUpdated = "2026-04-12T22:51:00Z"
 
 * insert Meta
 
