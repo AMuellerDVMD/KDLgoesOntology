@@ -1,4 +1,4 @@
-//generated: 2026-04-12 22:51:41"
+//generated: 2026-04-21 16:50:12"
 
 CodeSystem: PropertyCS
 Id: Property
@@ -7,7 +7,7 @@ Description: "Properties für die KDL"
 * insert Meta
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-04-12T22:00:00Z"
+* ^meta.lastUpdated = "2026-04-21T16:00:00Z"
 * ^url = "http://www.dvmd.de/kdlOntology/CodeSystem/Property"
 * ^version = "2026"
 * ^valueSet =  "http://www.dvmd.de/kdlOntology/ValueSet/Property"
@@ -30,10 +30,12 @@ Description: "Properties für die KDL"
 * #component "Komponente"
 * #art "Art des Dokuments"
 * #practiceSetting "Practice Setting"
+* #patientenbezogen "ist das Dokument auf einen bestimmten Patienten bezogen"
+* #bezug-zu-diagnose "besteht eine Relevanz zu einer bestimmten Diagnose, wen ja, zu welcher"
 
 
 
-//generated: 2026-04-12 22:51:41"
+//generated: 2026-04-21 16:50:12"
 
 ValueSet: PropertyVS
 Id: Property
@@ -41,7 +43,7 @@ Title: "KDL-Properties"
 Description: "Properties für die KDL"
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-04-12T22:51:00Z"
+* ^meta.lastUpdated = "2026-04-21T16:50:00Z"
 
 * insert Meta
 

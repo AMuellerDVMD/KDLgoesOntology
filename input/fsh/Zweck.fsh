@@ -1,4 +1,4 @@
-//generated: 2026-04-12 22:51:41"
+//generated: 2026-04-21 16:50:12"
 
 CodeSystem: ZweckCS
 Id: Zweck
@@ -8,7 +8,7 @@ Description: "welcher Zweck wird mit dem Dokument verfolgt"
 * insert Meta
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-04-12T22:00:00Z"
+* ^meta.lastUpdated = "2026-04-21T16:00:00Z"
 * ^url = "http://www.dvmd.de/kdlOntology/CodeSystem/Zweck"
 * ^version = "0.1.0"
 * ^valueSet =  "http://www.dvmd.de/kdlOntology/ValueSet/Zweck"
@@ -19,15 +19,23 @@ Description: "welcher Zweck wird mit dem Dokument verfolgt"
 
 * #daten "Erfassung von Daten"
   * #bild "Bild/Skizze"
+  * #kurve "Kurve"
+  * #formular "Formular"
+  * #vertrag "Vertrag"
+  * #anamnese "Anamnese"
 * #prozess "Unterstützung eines Prozesses"
+  * #plan "Plan"
   * #anforderung "Anforderung von etwas"
+  * #durchfuehrung "Durchführung"
   * #ergebnis "Bereitstellung von Ergebnissen"
 * #admin "administrativ"
   * #check "Checklliste"
   * #info "Informationen (für den Patienten)"
+  * #qs "Qualitätssicherung"
+  * #ausweis "Ausweis"
 
 
-//generated: 2026-04-12 22:51:41"
+//generated: 2026-04-21 16:50:12"
 
 ValueSet: ZweckVS
 Id: Zweck
@@ -36,7 +44,7 @@ Description: "welcher Zweck wird mit dem Dokument verfolgt"
 
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-04-12T22:51:00Z"
+* ^meta.lastUpdated = "2026-04-21T16:50:00Z"
 
 * insert Meta
 
