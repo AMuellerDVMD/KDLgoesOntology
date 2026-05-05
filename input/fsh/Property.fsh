@@ -1,4 +1,4 @@
-//generated: 2026-04-21 16:50:12"
+//generated: 2026-05-05 18:34:08"
 
 CodeSystem: PropertyCS
 Id: Property
@@ -7,7 +7,7 @@ Description: "Properties für die KDL"
 * insert Meta
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-04-21T16:00:00Z"
+* ^meta.lastUpdated = "2026-05-05T18:00:00Z"
 * ^url = "http://www.dvmd.de/kdlOntology/CodeSystem/Property"
 * ^version = "2026"
 * ^valueSet =  "http://www.dvmd.de/kdlOntology/ValueSet/Property"
@@ -35,7 +35,7 @@ Description: "Properties für die KDL"
 
 
 
-//generated: 2026-04-21 16:50:12"
+//generated: 2026-05-05 18:34:08"
 
 ValueSet: PropertyVS
 Id: Property
@@ -43,7 +43,7 @@ Title: "KDL-Properties"
 Description: "Properties für die KDL"
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-04-21T16:50:00Z"
+* ^meta.lastUpdated = "2026-05-05T18:34:00Z"
 
 * insert Meta
 

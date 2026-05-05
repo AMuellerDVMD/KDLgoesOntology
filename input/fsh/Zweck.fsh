@@ -1,4 +1,4 @@
-//generated: 2026-04-21 16:50:12"
+//generated: 2026-05-05 18:34:07"
 
 CodeSystem: ZweckCS
 Id: Zweck
@@ -8,7 +8,7 @@ Description: "welcher Zweck wird mit dem Dokument verfolgt"
 * insert Meta
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-04-21T16:00:00Z"
+* ^meta.lastUpdated = "2026-05-05T18:00:00Z"
 * ^url = "http://www.dvmd.de/kdlOntology/CodeSystem/Zweck"
 * ^version = "0.1.0"
 * ^valueSet =  "http://www.dvmd.de/kdlOntology/ValueSet/Zweck"
@@ -35,7 +35,7 @@ Description: "welcher Zweck wird mit dem Dokument verfolgt"
   * #ausweis "Ausweis"
 
 
-//generated: 2026-04-21 16:50:12"
+//generated: 2026-05-05 18:34:07"
 
 ValueSet: ZweckVS
 Id: Zweck
@@ -44,7 +44,7 @@ Description: "welcher Zweck wird mit dem Dokument verfolgt"
 
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-04-21T16:50:00Z"
+* ^meta.lastUpdated = "2026-05-05T18:34:00Z"
 
 * insert Meta
 

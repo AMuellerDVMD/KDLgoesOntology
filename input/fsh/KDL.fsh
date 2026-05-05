@@ -1,4 +1,4 @@
-//generated: 2026-04-21 16:50:12"
+//generated: 2026-05-05 18:34:08"
 
 CodeSystem: KDLCS
 Id: KDL
@@ -8,7 +8,7 @@ Description: "Klinische Dokumentenklassen-Liste (KDL)"
 * insert Meta
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-04-21T16:00:00Z"
+* ^meta.lastUpdated = "2026-05-05T18:00:00Z"
 * ^url = "http://www.dvmd.de/kdlOntology/CodeSystem/KDL"
 * ^version = "2026"
 * ^valueSet =  "http://www.dvmd.de/kdlOntology/ValueSet/KDL"
@@ -2813,7 +2813,7 @@ Detailinformationen: KBV (2022): https://mio.kbv.de/display/ULB. Zugegriffen: 18
       * ^property[=].valueBoolean = true
 
 
-//generated: 2026-04-21 16:50:12"
+//generated: 2026-05-05 18:34:08"
 
 ValueSet: KDLVS
 Id: KDL
@@ -2821,7 +2821,7 @@ Title: "KDL"
 Description: "Klinische Dokumentenklassen-Liste (KDL)"
 
 * ^meta.versionId = "1"
-* ^meta.lastUpdated = "2026-04-21T16:50:00Z"
+* ^meta.lastUpdated = "2026-05-05T18:34:00Z"
 
 * insert Meta
 
